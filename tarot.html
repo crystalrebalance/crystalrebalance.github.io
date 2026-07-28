@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>塔羅諮詢｜晶脈</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  #tarot{ padding-top:150px; background:var(--bg-deep); }
+  .tr-hero{ display:flex; gap:16px; align-items:center; margin-bottom:10px; }
+  .tr-icon-big{
+    width:72px; height:72px; border-radius:50%; background:#fff; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    box-shadow:0 12px 24px -14px rgba(157,133,98,0.4);
+  }
+  .tr-icon-big svg{ width:34px; height:34px; color:var(--gold-deep); }
+
+  .single-wrap{ max-width:600px; margin:36px auto 0; }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="晶脈"><span>晶脈</span></a>
+    <div class="nav-links">
+      <a href="index.html">首頁</a>
+      <a href="companion.html">陪跑陪伴</a>
+      <a href="bodywork.html">結構整復</a>
+      <a href="spray.html">能量噴霧</a>
+      <a href="tarot.html" class="active">塔羅諮詢</a>
+      <a href="map.html">生命地圖</a>
+      <a href="about.html">關於我</a>
+    </div>
+  </div>
+</nav>
+
+<section id="tarot">
+  <div class="wrap">
+    <div class="eyebrow">tarot / 塔羅諮詢</div>
+    <div class="tr-hero">
+      <div class="tr-icon-big">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M12 7v10M8.5 12h7"/></svg>
+      </div>
+      <h2 style="margin-bottom:0;">透過牌卡，看清眼前的線索</h2>
+    </div>
+    <p>塔羅不是預言，而是一面鏡子——透過牌卡的圖像與排列，陪你看見眼前選擇背後，那些你可能還沒意識到的線索與方向。</p>
+
+    <div class="single-wrap">
+      <div class="cat-card" style="cursor:default;">
+        <div class="mark">塔</div>
+        <div class="tag">CONSULTATION</div>
+        <h3>塔羅諮詢方案</h3>
+        <div class="price-list">
+          <div class="price-row">
+            <div class="p-name">線上解答<small>透過文字或通話進行</small></div>
+            <div class="p-num">$300 / 每題</div>
+          </div>
+          <div class="price-row">
+            <div class="p-name">外出現場<small>首題</small></div>
+            <div class="p-num">$500</div>
+          </div>
+          <div class="price-row">
+            <div class="p-name">外出現場<small>續問，每題</small></div>
+            <div class="p-num">$300</div>
+          </div>
+        </div>
+        <div class="disclaimer">外出現場服務目前僅限雙北地區（台北市、新北市）。</div>
+      </div>
+    </div>
+
+    <div class="line-cta">
+      <h3>想預約塔羅諮詢嗎？</h3>
+      <p>加入晶脈官方 LINE，告訴我們你想詢問的題目，協助你安排線上或現場的諮詢時間。</p>
+      <a href="https://lin.ee/sXX670c" class="line-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.94 2 10.7c0 4.27 3.58 7.85 8.42 8.55.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1 .87.55 1.08-.46 5.8-3.42 7.92-5.85C21.44 14.1 22 12.47 22 10.7 22 5.94 17.52 2 12 2z"/></svg>
+        加入官方 LINE 預約
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="fmark">✦</span>
+  晶脈 JING MAI ｜ 順應內心的人生陪跑日記
+  <nav class="foot-links">
+    <a href="index.html">首頁</a><a href="companion.html">陪跑陪伴</a><a href="bodywork.html">結構整復</a><a href="spray.html">能量噴霧</a><a href="tarot.html">塔羅諮詢</a><a href="map.html">生命地圖</a><a href="about.html">關於我</a>
+  </nav>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 30);
+  });
+</script>
+</body>
+</html>

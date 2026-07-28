@@ -180,9 +180,8 @@ footer .foot-links a:hover{ color:var(--gold-deep); }
 .line-btn:hover{ background:#05a648; transform:translateY(-2px); box-shadow:0 12px 24px -10px rgba(6,199,85,0.5); }
 .line-btn svg{ width:20px; height:20px; }
 
-/* 首頁三大服務並列卡片 */
-.pillar-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:50px; }
-@media(max-width:860px){ .pillar-grid{ grid-template-columns:1fr; } }
+/* 首頁服務並列卡片 */
+.pillar-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:22px; margin-top:50px; }
 .pillar-card{
   background:#fff; border:1px solid var(--line); border-radius:20px; padding:34px 26px;
   text-align:left; text-decoration:none; color:inherit; display:block;

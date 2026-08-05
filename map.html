@@ -4,6 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>生命晶脈地圖｜晶脈</title>
+<meta name="description" content="21 題脈輪能量測驗，找出此刻最需要補齊的脈輪，認識七脈輪掌管的區域與相應的療癒水晶。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="晶脈 JING MAI">
+<meta property="og:title" content="生命晶脈地圖｜晶脈">
+<meta property="og:description" content="21 題脈輪能量測驗，找出此刻最需要補齊的脈輪，認識七脈輪掌管的區域與相應的療癒水晶。">
+<meta property="og:image" content="og-image.png">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap">
 <link rel="stylesheet" href="style.css">
 <style>
   #quiz{ padding-top:150px; background:var(--bg); text-align:center; }
@@ -20,6 +33,7 @@
     flex:1; font-family:var(--round); font-size:12px; color:var(--ink-soft);
     background:var(--bg); border:1px solid var(--line); border-radius:12px;
     padding:10px 4px; text-align:center; cursor:pointer; transition:all .25s ease;
+    -webkit-appearance:none; appearance:none;
   }
   .q-opt.selected{ background:var(--gold); color:#fff; border-color:var(--gold); }
 
@@ -78,10 +92,11 @@
 </style>
 </head>
 <body>
+<a href="#quiz" class="skip-link">跳至主要內容</a>
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="logo.png" alt="晶脈"><span>晶脈</span></a>
+    <a href="index.html" class="nav-logo"><img src="logo-nav.png" alt="晶脈 logo" width="34" height="34" decoding="async"><span>晶脈</span></a>
     <div class="nav-links">
       <a href="index.html">首頁</a>
       <a href="companion.html">陪跑陪伴</a>
@@ -111,7 +126,7 @@
       <div class="quiz-note" id="quizNote">請先完成全部 21 題</div>
     </div>
 
-    <div class="result-panel" id="resultPanel">
+    <div class="result-panel" id="resultPanel" aria-live="polite">
       <div class="r-eyebrow">YOUR RESULT</div>
       <h3 id="rTitle"></h3>
       <div class="r-sub" id="rSub"></div>
@@ -219,15 +234,15 @@
     const item = document.createElement('div');
     item.className = 'chakra-item';
     item.innerHTML = `
-      <button class="chakra-head" data-i="${i}">
+      <button class="chakra-head" data-i="${i}" aria-expanded="false" aria-controls="chakra-body-${i}">
         <div class="chakra-icon-wrap" style="background:${c.color}22;">${gemIconSVG(c.color)}</div>
         <div class="ct">
           <h3>${c.title}</h3>
           <div class="sub">${c.sub}</div>
         </div>
-        <div class="chakra-arrow">▾</div>
+        <div class="chakra-arrow" aria-hidden="true">▾</div>
       </button>
-      <div class="chakra-body">
+      <div class="chakra-body" id="chakra-body-${i}">
         <p>${c.desc}</p>
         <div class="chakra-crystals">
           ${c.crystals.map(x => crystalCardHTML(x, c.color)).join('')}
@@ -238,7 +253,9 @@
   chakraList.addEventListener('click', (e) => {
     const head = e.target.closest('.chakra-head');
     if(!head) return;
-    head.closest('.chakra-item').classList.toggle('open');
+    const item = head.closest('.chakra-item');
+    const isOpen = item.classList.toggle('open');
+    head.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
   // ---------- 21 題測驗 ----------
@@ -272,9 +289,9 @@
     const card = document.createElement('div');
     card.className = 'q-card';
     card.innerHTML = `
-      <div class="q-text">${i+1}. ${q.text}</div>
-      <div class="q-scale">
-        ${[1,2,3,4].map(v => `<div class="q-opt" data-i="${i}" data-v="${v}">${v}</div>`).join('')}
+      <div class="q-text" id="q-label-${i}">${i+1}. ${q.text}</div>
+      <div class="q-scale" role="radiogroup" aria-labelledby="q-label-${i}">
+        ${[1,2,3,4].map(v => `<button type="button" class="q-opt" data-i="${i}" data-v="${v}" role="radio" aria-checked="false">${v}</button>`).join('')}
       </div>`;
     quizList.appendChild(card);
   });
@@ -295,8 +312,12 @@
     if(!opt) return;
     const i = +opt.dataset.i, v = +opt.dataset.v;
     answers[i] = v;
-    opt.parentElement.querySelectorAll('.q-opt').forEach(o => o.classList.remove('selected'));
+    opt.parentElement.querySelectorAll('.q-opt').forEach(o => {
+      o.classList.remove('selected');
+      o.setAttribute('aria-checked', 'false');
+    });
     opt.classList.add('selected');
+    opt.setAttribute('aria-checked', 'true');
     updateNote();
   });
 

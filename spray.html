@@ -4,19 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>能量噴霧｜晶脈</title>
-<meta name="description" content="晶脈能量噴霧，手工精油調製，好運、財運、貴人、桃花系列，也提供客製化配方，用香氣溫柔地陪伴你的空間與日常。">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="晶脈 JING MAI">
-<meta property="og:title" content="能量噴霧｜晶脈">
-<meta property="og:description" content="晶脈能量噴霧，手工精油調製，好運、財運、貴人、桃花系列，也提供客製化配方，用香氣溫柔地陪伴你的空間與日常。">
-<meta property="og:image" content="og-image.png?v=2">
-<meta property="og:locale" content="zh_TW">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" href="favicon-32.png?v=2">
-<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap">
 <link rel="stylesheet" href="style.css">
 <style>
   #spray{ padding-top:150px; background:var(--bg-deep); }
@@ -28,42 +15,61 @@
   }
   .sp-icon-big svg{ width:38px; height:38px; color:var(--gold-deep); }
 
-  .scent-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:40px; }
-  @media(max-width:640px){ .scent-grid{ grid-template-columns:1fr; } }
-  .scent-card{
-    background:#fff; border:1px solid var(--line); border-radius:20px; padding:26px 26px;
-    position:relative; overflow:hidden;
-  }
-  .scent-card .scent-mark{ position:absolute; right:-8px; top:-14px; font-size:64px; font-family:var(--serif); color:var(--gold); opacity:.08; }
-  .scent-card h3{ font-size:18px; margin-bottom:4px; }
-  .scent-card .note{ font-family:var(--round); font-size:12px; color:var(--gold-deep); letter-spacing:.06em; margin-bottom:10px; }
-  .scent-card .price{ margin-top:14px; font-family:var(--round); font-size:14px; color:var(--ink); font-weight:700; }
-
-  .custom-card{
-    margin-top:24px; background:var(--bg); border:1px dashed var(--gold); border-radius:20px;
-    padding:26px 28px; text-align:center;
-  }
-  .custom-card h3{ font-size:17px; margin-bottom:8px; }
-  .custom-card .price{ margin-top:12px; font-family:var(--round); font-size:15px; color:var(--gold-deep); font-weight:700; }
-
   .sample-photo{
     margin-top:34px; background:#fff; border:1px solid var(--line); border-radius:22px;
     padding:22px; text-align:center;
   }
   .sample-photo img{
-    max-width:220px; width:100%; height:auto; margin:0 auto; border-radius:14px; display:block;
+    max-width:280px; width:100%; margin:0 auto; border-radius:14px; display:block;
   }
   .sample-photo .cap{
     margin-top:16px; font-family:var(--round); font-size:12.5px; color:var(--ink-soft); line-height:1.7;
   }
+
+  /* ---------- 精油能量卡片 ---------- */
+  .oil-list{ display:flex; flex-direction:column; gap:28px; margin-top:44px; }
+  .oil-card{
+    background:#fff; border:1px solid var(--line); border-radius:22px;
+    padding:32px clamp(22px,5vw,40px); position:relative; overflow:hidden;
+  }
+  .oil-card .oil-mark{
+    position:absolute; right:-10px; top:-18px; font-size:72px; font-family:var(--serif);
+    color:var(--gold); opacity:.08;
+  }
+  .oil-card-head{ display:flex; justify-content:space-between; align-items:baseline; gap:14px; flex-wrap:wrap; }
+  .oil-card-head h3{ font-size:20px; }
+  .oil-card-head .oil-price{ font-family:var(--round); font-size:15px; color:var(--gold-deep); font-weight:700; white-space:nowrap; }
+  .oil-tagline{ margin-top:8px; font-size:14.5px; color:var(--ink-soft); }
+
+  .oil-ingredients{ margin-top:22px; padding-top:20px; border-top:1px dashed var(--line); display:flex; flex-direction:column; gap:12px; }
+  .oil-item{ display:flex; gap:14px; align-items:flex-start; }
+  .oil-item .oi-icon{
+    width:30px; height:30px; flex-shrink:0; margin-top:1px; border-radius:50%;
+    background:rgba(189,162,126,0.12); display:flex; align-items:center; justify-content:center;
+  }
+  .oil-item .oi-icon svg{ width:16px; height:16px; color:var(--gold-deep); }
+  .oil-item .oi-name{ font-size:14px; font-weight:600; color:var(--ink); }
+  .oil-item .oi-name .oi-role{ font-weight:500; color:var(--gold-deep); }
+  .oil-item .oi-desc{ font-size:13px; color:var(--ink-soft); line-height:1.6; margin-top:2px; }
+
+  .oil-summary{
+    margin-top:20px; padding-top:18px; border-top:1px dashed var(--line);
+    font-size:13.5px; color:var(--ink-soft); line-height:1.8;
+  }
+
+  .custom-card{
+    margin-top:8px; background:var(--bg); border:1px dashed var(--gold); border-radius:20px;
+    padding:26px 28px; text-align:center;
+  }
+  .custom-card h3{ font-size:17px; margin-bottom:8px; }
+  .custom-card .price{ margin-top:12px; font-family:var(--round); font-size:15px; color:var(--gold-deep); font-weight:700; }
 </style>
 </head>
 <body>
-<a href="#spray" class="skip-link">跳至主要內容</a>
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><img src="logo-nav.png?v=2" alt="晶脈 logo" width="34" height="34" decoding="async"><span>晶脈</span></a>
+    <a href="index.html" class="nav-logo"><img src="logo.png" alt="晶脈"><span>晶脈</span></a>
     <div class="nav-links">
       <a href="index.html">首頁</a>
       <a href="companion.html">陪跑陪伴</a>
@@ -85,48 +91,149 @@
       </div>
       <h2 style="margin-bottom:0;">手工調製，讓香氣傳遞意圖</h2>
     </div>
-    <p>每一瓶晶脈能量噴霧，都是手工精油調製而成，對應著不同的生活祝福與意圖。用香氣溫柔地陪伴你的空間與日常，也支持著你想累積的生活能量。</p>
+    <p>每一瓶晶脈能量噴霧，都是手工精油調製而成，每一款配方裡的每一支精油，都各自扮演著不同的角色——有的負責打開，有的負責穩定，有的負責清理。用香氣溫柔地陪伴你的空間與日常，也支持著你想累積的生活能量。</p>
 
     <div class="sample-photo">
-      <img src="spray-sample-web.jpg?v=2" alt="晶脈能量噴霧手工調製範例照" width="560" height="840" loading="lazy" decoding="async">
+      <img src="spray-sample.jpeg" alt="晶脈能量噴霧範例">
       <div class="cap">📷 範例圖片：實際的瓶身設計、水晶內容物與液體量，會依每次手工調製略有不同，收到的噴霧大約會是這個樣子。</div>
     </div>
 
-    <div class="scent-grid">
-      <div class="scent-card">
-        <div class="scent-mark">好</div>
-        <h3>好運噴霧</h3>
-        <div class="note">柑橘味主調</div>
-        <p>清新明亮的柑橘香氣，適合在一天的開始使用，帶來輕盈、順利的能量感。</p>
-        <div class="price">$300 / 30ml</div>
+    <div class="oil-list">
+
+      <!-- 聚財 -->
+      <div class="oil-card">
+        <div class="oil-mark">聚</div>
+        <div class="oil-card-head">
+          <h3>聚財噴霧</h3>
+          <div class="oil-price">$600 / 30ml</div>
+        </div>
+        <div class="oil-tagline">支持資源的累積與穩定，讓豐盛感一步步扎根、留在身邊。</div>
+        <div class="oil-ingredients">
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/></svg></div>
+            <div><div class="oi-name">甜橙 <span class="oi-role">｜開展</span></div><div class="oi-desc">負責「開」，打開機會與可能性，帶出向外拓展的起點。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M5 12h14"/></svg></div>
+            <div><div class="oi-name">雪松 <span class="oi-role">｜穩定</span></div><div class="oi-desc">木質的沉穩氣息，負責穩定，讓能量不會浮躁散失。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20c4-10 12-10 16 0"/></svg></div>
+            <div><div class="oi-name">廣藿香 <span class="oi-role">｜資源感</span></div><div class="oi-desc">帶出土地、累積與資源感，像是把根紮進豐盛的土壤裡。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v3M9 3.5l1.5 1.5M15 3.5l-1.5 1.5"/><path d="M8 9h8l1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z"/></svg></div>
+            <div><div class="oi-name">乳香 <span class="oi-role">｜儀式感</span></div><div class="oi-desc">讓整體氣味變得比較乾淨、有儀式感，適合作為聚焦的核心。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h12l4 6-10 12L2 9z"/></svg></div>
+            <div><div class="oi-name">肉桂葉 <span class="oi-role">｜溫暖核心</span></div><div class="oi-desc">只以少量調入，作為整體溫暖辛香的核心，點亮整支配方。</div></div>
+          </div>
+        </div>
       </div>
-      <div class="scent-card">
-        <div class="scent-mark">財</div>
-        <h3>財運噴霧</h3>
-        <div class="note">廣藿香主調</div>
-        <p>沉穩溫厚的廣藿香香氣，適合用於工作空間，支持踏實與豐盛的能量感。</p>
-        <div class="price">$300 / 30ml</div>
+
+      <!-- 留運 -->
+      <div class="oil-card">
+        <div class="oil-mark">留</div>
+        <div class="oil-card-head">
+          <h3>留運噴霧</h3>
+          <div class="oil-price">$600 / 30ml</div>
+        </div>
+        <div class="oil-tagline">讓你能主動地遇見好運，也讓人願意看見你、靠近你。</div>
+        <div class="oil-ingredients">
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/></svg></div>
+            <div><div class="oi-name">葡萄柚 <span class="oi-role">｜開機會</span></div><div class="oi-desc">清亮的果香，負責打開機會，帶來輕盈向前的動力。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/></svg></div>
+            <div><div class="oi-name">檸檬 <span class="oi-role">｜清理</span></div><div class="oi-desc">清理阻礙，把卡住的、混濁的先掃開，讓路變得清楚。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M14 6l6 6-6 6"/></svg></div>
+            <div><div class="oi-name">絲柏 <span class="oi-role">｜流動</span></div><div class="oi-desc">讓事情流動起來，不再卡在原地，帶著方向感往前走。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c4-4 7-7.5 7-11a7 7 0 0 0-14 0c0 3.5 3 7 7 11z"/></svg></div>
+            <div><div class="oi-name">伊蘭 <span class="oi-role">｜連結</span></div><div class="oi-desc">甜美柔和的氣息，帶來好的連結，讓人與人之間更容易靠近。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v3M9 3.5l1.5 1.5M15 3.5l-1.5 1.5"/><path d="M8 9h8l1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z"/></svg></div>
+            <div><div class="oi-name">乳香 <span class="oi-role">｜落地</span></div><div class="oi-desc">讓打開的一切穩穩落地，好運不只是經過，而是留下來。</div></div>
+          </div>
+        </div>
       </div>
-      <div class="scent-card">
-        <div class="scent-mark">貴</div>
-        <h3>貴人噴霧</h3>
-        <div class="note">玫瑰 or 木質調（可選）</div>
-        <p>可依個人喜好選擇玫瑰的溫柔香氣，或木質調的沉穩香氣，支持人際關係中的貴人能量。</p>
-        <div class="price">$300 / 30ml</div>
+
+      <!-- 放鬆心情 -->
+      <div class="oil-card">
+        <div class="oil-mark">鬆</div>
+        <div class="oil-card-head">
+          <h3>放鬆心情噴霧</h3>
+          <div class="oil-price">$600 / 30ml</div>
+        </div>
+        <div class="oil-tagline">陪你把繃緊的自己，一層一層地放下來。</div>
+        <div class="oil-ingredients">
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20c4-10 12-10 16 0"/></svg></div>
+            <div><div class="oi-name">羅馬洋甘菊 <span class="oi-role">｜安撫</span></div><div class="oi-desc">象徵放下緊繃，讓情緒慢慢柔軟下來。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20c4-10 12-10 16 0"/></svg></div>
+            <div><div class="oi-name">甜馬鬱蘭 <span class="oi-role">｜放鬆</span></div><div class="oi-desc">帶來溫暖與舒緩感，適合在忙碌後讓自己慢下來。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v3M9 3.5l1.5 1.5M15 3.5l-1.5 1.5"/><path d="M8 9h8l1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z"/></svg></div>
+            <div><div class="oi-name">乳香 <span class="oi-role">｜沉澱</span></div><div class="oi-desc">幫助整理思緒，讓內在回到比較穩定的狀態。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20c4-10 12-10 16 0"/></svg></div>
+            <div><div class="oi-name">薰衣草 <span class="oi-role">｜平靜</span></div><div class="oi-desc">是很直覺的放鬆調性，讓整體變得柔和、安定。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/></svg></div>
+            <div><div class="oi-name">甜橙 <span class="oi-role">｜愉悅</span></div><div class="oi-desc">增加溫暖明亮的感覺，讓放鬆不會變得太沉重。</div></div>
+          </div>
+        </div>
       </div>
-      <div class="scent-card">
-        <div class="scent-mark">桃</div>
-        <h3>桃花噴霧</h3>
-        <div class="note">伊蘭主調</div>
-        <p>甜美柔和的伊蘭香氣，適合想增進感情與人緣時使用，帶來溫暖的親和力。</p>
-        <div class="price">$300 / 30ml</div>
+
+      <!-- 驅魔避邪 -->
+      <div class="oil-card">
+        <div class="oil-mark">避</div>
+        <div class="oil-card-head">
+          <h3>驅魔避邪噴霧</h3>
+          <div class="oil-price">$700 / 30ml</div>
+        </div>
+        <div class="oil-tagline">為自己與空間，重新畫出一道安心的界線。</div>
+        <div class="oil-ingredients">
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20c4-10 12-10 16 0"/></svg></div>
+            <div><div class="oi-name">茶樹 <span class="oi-role">｜淨化</span></div><div class="oi-desc">象徵清理沉重與混濁的氣息。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M5 12h14"/></svg></div>
+            <div><div class="oi-name">檜木／紅檜木 <span class="oi-role">｜守護</span></div><div class="oi-desc">木質氣息帶來穩定、沉著與安全感。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/></svg></div>
+            <div><div class="oi-name">雪松 <span class="oi-role">｜界線</span></div><div class="oi-desc">象徵建立自己的界線，不讓外在干擾輕易靠近。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v3M9 3.5l1.5 1.5M15 3.5l-1.5 1.5"/><path d="M8 9h8l1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z"/></svg></div>
+            <div><div class="oi-name">乳香 <span class="oi-role">｜神聖</span></div><div class="oi-desc">帶出沉靜、莊重的儀式感，適合作為淨化核心。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/></svg></div>
+            <div><div class="oi-name">檸檬 <span class="oi-role">｜清明</span></div><div class="oi-desc">讓整體氣味更加明亮，象徵驅散混濁、恢復清晰。</div></div>
+          </div>
+        </div>
       </div>
+
     </div>
 
     <div class="custom-card">
       <h3>客製噴霧</h3>
       <p>想要一瓶專屬於你的能量噴霧嗎？告訴我們你的需求與喜歡的香氣調性，為你調製獨一無二的配方。</p>
-      <div class="price">$600 – $1,000 / 30ml</div>
+      <div class="price">$1,200 – $1,500 / 30ml</div>
     </div>
 
     <div class="disclaimer" style="margin-top:30px; max-width:640px;">噴霧請勿直接用在人體，可噴在衣服或是空間中，以提供相對應的能量。</div>
@@ -134,16 +241,10 @@
     <div class="line-cta">
       <h3>想訂購或客製你的能量噴霧嗎？</h3>
       <p>加入晶脈官方 LINE，告訴我們你想要的香氣與用途，協助你挑選最適合的一瓶。</p>
-      <div class="line-cta-inner">
-        <a href="https://lin.ee/sXX670c" class="line-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.94 2 10.7c0 4.27 3.58 7.85 8.42 8.55.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1 .87.55 1.08-.46 5.8-3.42 7.92-5.85C21.44 14.1 22 12.47 22 10.7 22 5.94 17.52 2 12 2z"/></svg>
-          加入官方 LINE 訂購
-        </a>
-        <div>
-          <img class="line-qr" src="line-qr-web.png" alt="晶脈官方 LINE 條碼，掃描即可加入好友" width="112" height="112" loading="lazy" decoding="async">
-          <div class="line-qr-cap">📱 掃描條碼加入</div>
-        </div>
-      </div>
+      <a href="https://lin.ee/sXX670c" class="line-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.94 2 10.7c0 4.27 3.58 7.85 8.42 8.55.33.07.77.22.88.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1 .87.55 1.08-.46 5.8-3.42 7.92-5.85C21.44 14.1 22 12.47 22 10.7 22 5.94 17.52 2 12 2z"/></svg>
+        加入官方 LINE 訂購
+      </a>
     </div>
   </div>
 </section>

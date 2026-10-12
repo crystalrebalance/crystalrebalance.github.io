@@ -66,6 +66,20 @@
   }
   .custom-card h3{ font-size:17px; margin-bottom:8px; }
   .custom-card .price{ margin-top:12px; font-family:var(--round); font-size:15px; color:var(--gold-deep); font-weight:700; }
+
+  /* 驅魔避邪：守護感強化 */
+  .oil-card-shield{
+    background:linear-gradient(180deg, #fff 0%, var(--bg) 100%);
+    border-color:var(--gold-soft);
+  }
+  .oil-card-shield .oil-mark{ color:var(--ink); opacity:.06; }
+  .oil-emoji{ margin-right:6px; }
+
+  /* 圖片載入失敗時的柔和佔位，避免破圖圖示影響版面 */
+  img{ background:var(--bg-deep); }
+  img.img-broken{
+    min-height:64px; background:var(--bg-deep) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23bda27e' stroke-width='1.2'%3E%3Cpath d='M12 2v3M9 3.5l1.5 1.5M15 3.5l-1.5 1.5'/%3E%3Cpath d='M8 9h8l1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z'/%3E%3C/svg%3E") no-repeat center / 32px;
+  }
 </style>
 </head>
 <body>
@@ -142,27 +156,27 @@
           <h3>留運噴霧</h3>
           <div class="oil-price">$600 / 30ml</div>
         </div>
-        <div class="oil-tagline">讓你能主動地遇見好運，也讓人願意看見你、靠近你。</div>
+        <div class="oil-tagline">讓你可以主動遇見好運，也讓人自然願意看見你。</div>
         <div class="oil-ingredients">
           <div class="oil-item">
             <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/></svg></div>
             <div><div class="oi-name">葡萄柚 <span class="oi-role">｜開機會</span></div><div class="oi-desc">清亮的果香，負責打開機會，帶來輕盈向前的動力。</div></div>
           </div>
           <div class="oil-item">
-            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/></svg></div>
-            <div><div class="oi-name">檸檬 <span class="oi-role">｜清理</span></div><div class="oi-desc">清理阻礙，把卡住的、混濁的先掃開，讓路變得清楚。</div></div>
-          </div>
-          <div class="oil-item">
             <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M14 6l6 6-6 6"/></svg></div>
-            <div><div class="oi-name">絲柏 <span class="oi-role">｜流動</span></div><div class="oi-desc">讓事情流動起來，不再卡在原地，帶著方向感往前走。</div></div>
+            <div><div class="oi-name">絲柏 <span class="oi-role">｜流動</span></div><div class="oi-desc">清走阻礙，讓事情自然流動，不再卡在原地。</div></div>
           </div>
           <div class="oil-item">
             <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c4-4 7-7.5 7-11a7 7 0 0 0-14 0c0 3.5 3 7 7 11z"/></svg></div>
-            <div><div class="oi-name">伊蘭 <span class="oi-role">｜連結</span></div><div class="oi-desc">甜美柔和的氣息，帶來好的連結，讓人與人之間更容易靠近。</div></div>
+            <div><div class="oi-name">柳丁花 <span class="oi-role">｜連結</span></div><div class="oi-desc">柔軟地吸引好的連結，讓人與人之間更容易靠近。</div></div>
           </div>
           <div class="oil-item">
             <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v3M9 3.5l1.5 1.5M15 3.5l-1.5 1.5"/><path d="M8 9h8l1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z"/></svg></div>
-            <div><div class="oi-name">乳香 <span class="oi-role">｜落地</span></div><div class="oi-desc">讓打開的一切穩穩落地，好運不只是經過，而是留下來。</div></div>
+            <div><div class="oi-name">乳香 <span class="oi-role">｜守護</span></div><div class="oi-desc">守護你的場域，讓好運能夠安心靠近與停留。</div></div>
+          </div>
+          <div class="oil-item">
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M5 12h14"/></svg></div>
+            <div><div class="oi-name">檀香 <span class="oi-role">｜落地</span></div><div class="oi-desc">讓打開的一切穩穩落地，好運不只是經過，而是留下來。</div></div>
           </div>
         </div>
       </div>
@@ -200,33 +214,33 @@
       </div>
 
       <!-- 驅魔避邪 -->
-      <div class="oil-card">
+      <div class="oil-card oil-card-shield">
         <div class="oil-mark">避</div>
         <div class="oil-card-head">
-          <h3>驅魔避邪噴霧</h3>
+          <h3><span class="oil-emoji" aria-hidden="true">🛡️</span>驅魔避邪噴霧</h3>
           <div class="oil-price">$700 / 30ml</div>
         </div>
-        <div class="oil-tagline">為自己與空間，重新畫出一道安心的界線。</div>
+        <div class="oil-tagline">淨化守護 — 為自己與空間，重新畫出一道安心的界線。</div>
         <div class="oil-ingredients">
           <div class="oil-item">
-            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20c4-10 12-10 16 0"/></svg></div>
-            <div><div class="oi-name">茶樹 <span class="oi-role">｜淨化</span></div><div class="oi-desc">象徵清理沉重與混濁的氣息。</div></div>
+            <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2c-2 3-4 6-4 9a4 4 0 0 0 8 0c0-3-2-6-4-9z"/><path d="M8 14l-2 6M16 14l2 6"/></svg></div>
+            <div><div class="oi-name">薄荷 <span class="oi-role">｜驅散</span></div><div class="oi-desc">清涼而明亮，象徵驅散沉重與混濁感。</div></div>
           </div>
           <div class="oil-item">
             <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M5 12h14"/></svg></div>
-            <div><div class="oi-name">檜木／紅檜木 <span class="oi-role">｜守護</span></div><div class="oi-desc">木質氣息帶來穩定、沉著與安全感。</div></div>
+            <div><div class="oi-name">紅檜木 <span class="oi-role">｜守護</span></div><div class="oi-desc">溫潤木質氣息，象徵穩定與安全感。</div></div>
           </div>
           <div class="oil-item">
             <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/></svg></div>
-            <div><div class="oi-name">雪松 <span class="oi-role">｜界線</span></div><div class="oi-desc">象徵建立自己的界線，不讓外在干擾輕易靠近。</div></div>
+            <div><div class="oi-name">雪松 <span class="oi-role">｜界線</span></div><div class="oi-desc">象徵建立自己的界線，減少外在干擾。</div></div>
           </div>
           <div class="oil-item">
             <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v3M9 3.5l1.5 1.5M15 3.5l-1.5 1.5"/><path d="M8 9h8l1 12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z"/></svg></div>
-            <div><div class="oi-name">乳香 <span class="oi-role">｜神聖</span></div><div class="oi-desc">帶出沉靜、莊重的儀式感，適合作為淨化核心。</div></div>
+            <div><div class="oi-name">乳香 <span class="oi-role">｜神聖</span></div><div class="oi-desc">帶來沉靜與儀式感，象徵淨化與內在安定。</div></div>
           </div>
           <div class="oil-item">
             <div class="oi-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/></svg></div>
-            <div><div class="oi-name">檸檬 <span class="oi-role">｜清明</span></div><div class="oi-desc">讓整體氣味更加明亮，象徵驅散混濁、恢復清晰。</div></div>
+            <div><div class="oi-name">檸檬 <span class="oi-role">｜清明</span></div><div class="oi-desc">明亮清新的氣息，象徵掃除混亂、恢復清晰。</div></div>
           </div>
         </div>
       </div>
@@ -263,6 +277,11 @@
 <script>
   window.addEventListener('scroll', () => {
     document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  // 圖片載入失敗時，改用柔和佔位圖標，避免版面出現破圖圖示
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', () => { img.classList.add('img-broken'); }, { once: true });
   });
 </script>
 </body>
